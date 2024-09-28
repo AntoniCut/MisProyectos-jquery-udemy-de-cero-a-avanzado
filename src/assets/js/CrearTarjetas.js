@@ -4,6 +4,8 @@
 
 
 import $ from 'jquery';
+import imgLeccion23 from '/img/leccion-23.png';
+import { linksGitHub } from '../../data/linksGitHub';
 
 
 //  **********************************************
@@ -42,11 +44,13 @@ export const CrearTarjetas = () => {
                     <div class="card-container-links">
                         
                         <a href="${opciones.link[i]}" class="card_button" target="_blank">APP</a>
-                                                
-                        <a class="card__link">HTML</a>
-                        <a class="card__link">CSS</a>
-                        <a class="card__link">JS</a>
+                                       
+                        <a href="${linksGitHub[i]}" target="_blank" class="card__link"> 
+                                <i class="fab fa-github fa-2x"> </i>
+                        </a>
+ 
                     </div>
+
                 </div>
             `;
 
@@ -54,8 +58,34 @@ export const CrearTarjetas = () => {
             cardsHtmlArray.push(cardHtml);
         }
 
+        const cardHtmlLeccion23 = `
+        
+            <div class="cards__card">
+                <h2 class="card__title"> 23 - Peticiones Ajax </h2>
+                <div class="card__container-img">
+                    <img src="${imgLeccion23}" class="card__img">
+                </div>
+                <div class="card-container-links">
+                        
+                    <a href="https://www.oldschoolcode.antonydev.tech/jquery-ajax" class="card_button" target="_blank">APP</a>
+                    
+                    <a href="${linksGitHub[23]}" target="_blank" class="card__link"> 
+                        <i class="fab fa-github fa-2x"> </i>
+                    </a>
+                    
+                </div>
+
+            </div>
+        
+        `;
+
+        //  ----------  Añadir el div para el contenido de la lección 23  ----------
+        cardsHtmlArray.push(cardHtmlLeccion23);
+
+
         // Agregar la tarjeta al contenedor
         cardContainer.append(cardsHtmlArray);
+
     };
 };
 

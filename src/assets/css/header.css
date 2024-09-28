@@ -24,61 +24,37 @@
 
 
 
-/*  *****************************************  */
-/*  **********  ESTILOS GENERALES  **********  */
-/*  *****************************************  */
-
-
-html {
-    font-size: 10px;
-    /* overflow-x: hidden; */
-}
-
-
-body {
-    width: 100%;
-    height: 100%;
-    font-size: 1.6rem;
-    font-family: 'DM Sans', sans-serif;
-    line-height: 1.5rem;
-    font-weight: 400;
-    color: var(--color-text-body);
-}
-
-
-
 /*  **************************************************  */
 /*  **********  CABECERA Y MENÚ NAVEGACIÓN  **********  */
 /*  **************************************************  */
 
 .layout__menu {
-    /* position: fixed; */
     display: flex;
-    justify-content: space-between;
-    
     width: 100%;
-    height: 20px;
-    padding: 3.5rem 3rem;
-    padding-bottom: 5rem;
-    /* background-color: #f8f8f8; */
+    height: 10rem;
+    /* padding: 3.5rem 3rem; */
+    /* padding-bottom: 5rem; */
+    /* background-color: #f8f8f8;  */
     background-color: #EDEFF3;
 }
 
+
 .menu__navbar {
+    width: 100%;
     display: flex;
     flex-direction: row;
-    /* justify-content: space-between; */
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 }
 
 .navbar__logo {
-    width: 50%;
+    margin-right: 10rem;
 }
 
 .navbar__link-logo {
     display: flex;
-    gap: 0 50px;
+    gap: 0 30px;
     align-items: center;
     justify-content: center;
 }
@@ -88,18 +64,13 @@ body {
     height: 50px;
 }
 
-.navbar__title {
-    width: 600px;
-    line-height: 1.2;
-    font-size: 25px;
-    color: #3889A3;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
+
 
 .nav__list {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    font-size: 1.5rem;
 }
 
 .nav__item {
@@ -144,12 +115,14 @@ body {
     opacity: 1;
 }
 
+
+/*  *****  Submenus  *****  */
 .nav__submenu {
     display: block;
     position: absolute;
     top: 100%;
     left: 2rem;
-    min-width: 19rem;
+    min-width: 28rem;
     padding: 1.5rem 1rem;
     border-radius: 4px;
     background-color: var(--color-secondary);
@@ -190,7 +163,7 @@ body {
     display: block;
     position: relative;
     font-size: 1.5rem;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     text-decoration: none;
     font-weight: 500;
     color: var(--color-text-body);

@@ -2,31 +2,25 @@
 //  ********** /main.js  **********
 //  *******************************  
 
+
 //  -----  Importación Hojas de Estilos  -----
 import './src/assets/css/reset.css';
+import './style.css';
 import './src/assets/css/header.css';
 import './src/assets/css/home.css';
 
-//  -----  Importación Imagenes  -----
-import './public/leccion-01.jpg';
-import './public/leccion-02.jpg';
-import './public/leccion-03.jpg';
-import './public/leccion-04.jpg';
-
-//  -----  Importacion Archivos del Curso  -----
-import leccion1Url from '/archivos-curso/01-leccion-01/index.html?url';
-import leccion2Url from '/archivos-curso/02-leccion-02/index.html?url';
-import leccion3Url from '/archivos-curso/03-leccion-03/index.html?url';
-import leccion4Url from '/archivos-curso/04-leccion-04/index.html?url';
-
-
-
-//  -----  Importación Otros Archivos y Librerias  -----
+//  -----  Importación Librerias  -----
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import $ from 'jquery';                                           //  Importación de jQuery
 
+//  -----  Importación Archivos JS  -----
 import { CrearHeader } from './src/assets/js/CrearHeader';
 import { CrearTarjetas } from './src/assets/js/CrearTarjetas';
+
+//  -----  Importación de Datos  -----
+import { imagenes } from './src/data/imagenes';
+import { links } from './src/data/links';
+import { titulos } from './src/data/titulos';
 
 
 
@@ -35,72 +29,54 @@ import { CrearTarjetas } from './src/assets/js/CrearTarjetas';
 //  *******************************************************
 const App = () => {
 
-   const app = document.querySelector('#app');
+    const app = document.querySelector('#app');
 
-   if (app) {
-      
-      //  ----------  Agregar el contenido de header y home  ----------
-      app.innerHTML = `
-      
-         <section class="layout__menu"> 
-            <!-- Aquí se Renderizara la Cabecera -->
-         </section>
+    if (app) {
 
-         <div id="home">
-            <div class="home__cards">
-               <!-- Aquí se Renderizara las tarjetas dinámicamente -->
+        //  ----------  Agregar el contenido de header y home  ----------
+        app.innerHTML = `
+      
+            <section class="layout__menu"> 
+                <!-- Aquí se Renderizara la Cabecera -->
+            </section>
+
+            <header class="layout__title-home">
+                <h1 class="title-home__title"> Curso jQuery de Cero a Avanzado </h1>
+            </header>
+
+            <div id="home">
+                <div class="home__cards">
+                    <!-- Aquí se Renderizara las tarjetas dinámicamente -->
+                </div>
             </div>
-         </div>
-      `; 
-      
-      //  ----------  Llamar a la función para crear la cabecera  ----------
-      CrearHeader();
-      
-      //  ----------  Llamar a la función para crear tarjetas  ----------
-      CrearTarjetas(); 
+        
+      `;
 
-      //  ----------  Array con los links de los htmls  ----------
-      const links = [
-         leccion1Url,
-         leccion2Url,
-         leccion3Url,
-         leccion4Url
-      ];
+        //  ----------  Llamar a la función para crear la cabecera  ----------
+        CrearHeader();
 
-      //  ----------  Llamar a $.addCards con opciones  ----------
-      if ($.addCards) {
-         
-         $.addCards({
+        //  ----------  Llamar a la función para crear tarjetas  ----------
+        CrearTarjetas();
 
-            img: [
-               "leccion-01.jpg",
-               "leccion-02.jpg",
-               "leccion-03.jpg",
-               "leccion-04.jpg",
-            ],
+        //  ----------  Cargar el contenido de la lección 23  ----------
+        //loadLeccion23Html(); // Llama a la función para cargar la lección 23
 
-            titulo: [
-               "jQuery y Bootstrap",
-               "Selectores y Encadenamiento",
-               "Eventos",
-               "Acordeones"
-            ],
 
-            link: links
+        //  ----------  Llamar a $.addCards con opciones  ----------
+        if ($.addCards) {
 
-            // link: [
-            //    "src/archivos-curso/01-leccion-01/index.html",
-            //    "src/archivos-curso/02-leccion-02/index.html",
-            //    "src/archivos-curso/03-leccion-03/index.html",
-            //    "src/archivos-curso/04-leccion-04/index.html"
-            // ]
+            $.addCards({
 
-         });
+                img: imagenes,
+                titulo: titulos,
+                link: links
 
-      } else console.error('$.addCards no está definida');
-      
-   } else console.error('No se encontró el elemento con id #app.');
-   
+            });
+
+        } else console.error('$.addCards no está definida');
+
+    } else console.error('No se encontró el elemento con id #app.');
+
 };
 
 
