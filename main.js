@@ -8,19 +8,26 @@ import './src/assets/css/reset.css';
 import './style.css';
 import './src/assets/css/header.css';
 import './src/assets/css/home.css';
+import './src/assets/css/responsive.css';
 
-//  -----  Importación Librerias  -----
+//  -----  Importación Libreria 'fontawesomw'  -----
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import $ from 'jquery';                                           //  Importación de jQuery
+
+//  -----  Importación de jQuery  -----
+import $ from 'jquery';                                           
 
 //  -----  Importación Archivos JS  -----
 import { CrearHeader } from './src/assets/js/CrearHeader';
 import { CrearTarjetas } from './src/assets/js/CrearTarjetas';
+import { CrearMenuMobile } from './src/assets/js/CrearMenuMobile';
+import { ActionsMenuMobile } from './src/assets/js/ActionsMenuMobile';
+import { MenuFixed } from './src/assets/js/MenuFixed';
 
 //  -----  Importación de Datos  -----
 import { imagenes } from './src/data/imagenes';
 import { links } from './src/data/links';
 import { titulos } from './src/data/titulos';
+
 
 
 
@@ -36,6 +43,10 @@ const App = () => {
         //  ----------  Agregar el contenido de header y home  ----------
         app.innerHTML = `
       
+            <div class="menu-mobile">
+                <!-- Aquí se Renderizara el Menu Mobile -->
+            </div>
+
             <section class="layout__menu"> 
                 <!-- Aquí se Renderizara la Cabecera -->
             </section>
@@ -52,14 +63,21 @@ const App = () => {
         
       `;
 
+        //  ----------  Llama a la función para crear el menu responsive  mobile  -----
+        CrearMenuMobile();
+
         //  ----------  Llamar a la función para crear la cabecera  ----------
         CrearHeader();
+
+        //  ----------  Llamar a la función para dejar el Menu Fijo  ----------
+        MenuFixed();
+
 
         //  ----------  Llamar a la función para crear tarjetas  ----------
         CrearTarjetas();
 
-        //  ----------  Cargar el contenido de la lección 23  ----------
-        //loadLeccion23Html(); // Llama a la función para cargar la lección 23
+        //  ----------  Llama a la función para manejar el menu responsive mobile  -----
+        ActionsMenuMobile();
 
 
         //  ----------  Llamar a $.addCards con opciones  ----------

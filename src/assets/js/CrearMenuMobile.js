@@ -1,14 +1,14 @@
-//  **********************************************
-//  **********  /src/js/CrearHeader.js  **********
-//  **********************************************
+//  **************************************************
+//  **********  /src/js/CrearMenuMobile.js  **********
+//  **************************************************
 
 
-//  -----  Importación de jQuery  -----
 import $ from 'jquery';
 
-//  -----  Importación Imagenes  -----
 import imgUdemy from '/img/cliente-2.png';
 import imgjQuery from '/img/jquery-logo2.png';
+
+
 
 
 //  -----  Importacion Archivos del Curso  -----
@@ -37,99 +37,108 @@ import leccion21Url from '/archivos-curso/21-leccion-21/index.html?url';
 import leccion22Url from '/archivos-curso/22-leccion-22/index.html?url';
 
 
-//  ********************************************
-//  **********  Función Crear Header  **********
-//  ********************************************
-export const CrearHeader = () => {
 
 
-    const layoutMenu = $('.layout__menu');
 
-    const headerHTML = `
 
-        <header class="menu__navbar">
-        
+//  *************************************************
+//  **********  Función Crear Menu Movile  **********
+//  ***********************************************************
+export const CrearMenuMobile = () => {
+
+
+    const menuMobile = $('.menu-mobile');
+
+
+    const menuMobileHtml = `
+
+
+        <!--  **********  Header del Menu  **********  -->
+        <header class="menu-mobile__header">
+
             <!--  -----  Logos  -----  -->  
-            <div class="navbar__logo">
+            <div class="navbar__logo-mobile">
                 <a href="#" class="navbar__link-logo">
-                    <img src=${imgUdemy} class="navbar__logo-light">
-                </a>
-
-                <a href="#" class="navbar__link-logo">
-                    <img src=${imgjQuery} class="navbar__logo-light">
+                    <img src=${imgUdemy} class="navbar__logo-mobile-img">
+                    <img src=${imgjQuery} class="navbar__logo-mobile-img">
                 </a>
             </div>
-            
-             <!--  -----  Botón del Menu Responsive  -----  -->
-            <div class="navbar__mobile-btn">
-                <button class="mobile-btn__wrap">
-                    <span class="mobile-btn__line"> </span>
-                    <span class="mobile-btn__line"> </span>
-                    <span class="mobile-btn__line"> </span>
-                </button>
-            </div>
+           
+
+            <!--  *****  Botón de Cerrar el Menu  *****  -->
+            <button class="menu-mobile__close">
+                <i class="menu-mobile__icon-close fa-solid fa-xmark"> </i>
+            </button>
+
+        </header>
 
 
-            <!--  -----  Navegación  -----  -->
-            <nav class="navbar__nav">
-                
+        <!--  **********  Menu de Navegación  **********  -->
+        <div class="menu-mobile__body">
+
+            <!--  *****  Nav del Menu de Navegación  *****  -->
+            <nav class="menu-mobile__nav">
+
                 <!--  -----  Lista de Navegación  ------->
-                <ul class="nav__list">
+                <ul class="menu-mobile__list">
 
 
-                    <!--  -----  Item 1 - Primeros Pasos  -----  -->
-                    <li class="nav__item">
+                    <!--  -----  1ª. Elemento li 'Primeros pasos'  -----  -->
+                    <li class="menu-mobile__item">
                         
-                        <a href="#" class="nav__title">
-                            Primeros pasos
-                            <i class="fa-solid fa-chevron-down nav__icon"> </i>
+                        <a href="#" class="menu-mobile__link"> 
+                            Primeros pasos 
+                            <i class="fa-solid fa-chevron-down menu-mobile__icon"> </i>
                         </a>
-                        
-                        <!--  -----  Submenu Item 1  ------->
-                        <ul class="nav__submenu">
-                            
+                    
+                    
+                        <!--  -----  Submenu del li 1  ------->
+                        <ul class="menu-mobile__submenu-mobile">
+
                             <!--  1º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion1Url}" target="_blank" class="submenu__title"> 1 - jQuery y Bootstrap </a>
                             </li>
 
                             <!--  2º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion2Url}" target="_blank" class="submenu__title"> 2 - Selectores y Encadenamiento </a>
                             </li>
-                            
+
                         </ul>
+                    
                     </li>
 
 
-                    <!--  -----  Item 2 - Eventos  -----  -->
-                    <li class="nav__item">
-                        
-                        <a href="#" class="nav__title">
+                    <!--  -----  2º. Elemento li 'Eventos'  -----  -->
+                    <li class="menu-mobile__item">
+
+                        <a href="#" class="menu-mobile__link">
                             Eventos
-                            <i class="fa-solid fa-chevron-down nav__icon"> </i>
+                            <i class="fa-solid fa-chevron-down menu-mobile__icon"> </i>
                         </a>
-                        
+
+
                         <!--  -----  Submenu Item 2  ------->
-                        <ul class="nav__submenu">
+                        <ul class="menu-mobile__submenu-mobile">
                             
                             <!--  1º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion3Url}" target="_blank" class="submenu__title"> 3 - Eventos </a>
                             </li>
 
                             <!--  2º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion4Url}" target="_blank" class="submenu__title"> 4 - Acordeones </a>
                             </li>
 
                             <!--  3º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion5Url}" target="_blank" class="submenu__title"> 5 - On y Bind </a>
                             </li>
 
                             <!--  4º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion6Url}" target="_blank" class="submenu__title"> 6 - Tabla de Multiplicar </a>
                             </li>
                             
@@ -138,167 +147,172 @@ export const CrearHeader = () => {
                     </li>
 
 
-                    <!--  -----  Item 3 - Objetos  -----  -->
-                    <li class="nav__item">
-                        
-                        <a href="#" class="nav__title">
+                    <!--  -----  3º. Elemento li 'Objetos'  -----  -->
+                    <li class="menu-mobile__item">
+
+                        <a href="#" class="menu-mobile__link">
                             Objetos
-                            <i class="fa-solid fa-chevron-down nav__icon"> </i>
+                            <i class="fa-solid fa-chevron-down menu-mobile__icon"> </i>
                         </a>
-                        
+
+
                         <!--  -----  Submenu Item 3  ------->
-                        <ul class="nav__submenu">
+                        <ul class="menu-mobile__submenu-mobile">
                             
                             <!--  1º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion7Url}" target="_blank" class="submenu__title"> 7 - Objetos JavaScript </a>
                             </li>
 
                             <!--  2º li del Submenu  -->
-                            <li class="submenu__item">
-                                <a href="${leccion8Url}" target="_blank" class="submenu__title"> 8 - Objetos jQuery </a>
+                            <li class="submenu-mobile__item">
+                                 <a href="${leccion8Url}" target="_blank" class="submenu__title"> 8 - Objetos jQuery </a>
                             </li>
 
                             <!--  3º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion9Url}" target="_blank" class="submenu__title"> 9.1 - Tesla Motor Parte 1 </a>
                             </li>
 
                             <!--  4º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion9_2_Url}" target="_blank" class="submenu__title"> 9.2 - Tesla Motor Parte 2 </a>
                             </li>
-                            
+
                             <!--  5º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion10Url}" target="_blank" class="submenu__title"> 10 - Datta Attribute </a>
                             </li>
 
                             <!--  6º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion11Url}" target="_blank" class="submenu__title"> 11 - Tienda de Ropa </a>
                             </li>
-
+                            
                         </ul>
 
                     </li>
 
 
-                    <!--  -----  Item 4 - Animaciones  -----  -->
-                    <li class="nav__item">
-                        
-                        <a href="#" class="nav__title">
+                    <!--  -----  4º. Elemento li 'Animaciones'  -----  -->
+                    <li class="menu-mobile__item">
+
+                        <a href="#" class="menu-mobile__link">
                             Animaciones
-                            <i class="fa-solid fa-chevron-down nav__icon"> </i>
+                            <i class="fa-solid fa-chevron-down menu-mobile__icon"> </i>
                         </a>
-                        
-                        <!--  -----  Submenu Item 4  ------->
-                        <ul class="nav__submenu">
-                            
+
+                        <!--  -----  Submenu item 4 ------->
+                        <ul class="menu-mobile__submenu-mobile">
+
                             <!--  1º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion12Url}" target="_blank" class="submenu__title"> 12 - Animaciones 101 </a>
                             </li>
 
                             <!--  2º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion13Url}" target="_blank" class="submenu__title"> 13 - Animaciones 202  </a>
                             </li>
 
                             <!--  3º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion14Url}" target="_blank" class="submenu__title"> 14 - Animaciones GSAP </a>
                             </li>
-                            
+
                             <!--  4º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion15Url}" target="_blank" class="submenu__title"> 15 - Slider I </a>
                             </li>
 
                             <!--  5º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion16Url}" target="_blank" class="submenu__title"> 16 - Slider II  </a>
                             </li>
+
                         </ul>
+
                     </li>
 
 
-
-                    <!--  -----  Item 5 - Plugins  -----  -->
-                    <li class="nav__item">
+                    <!--  -----  5º. Elemento li 'Plugins'  -----  -->
+                    <li class="menu-mobile__item">
                         
-                        <a href="#" class="nav__title">
+                        <a href="#" class="menu-mobile__link">
                             Plugins
-                            <i class="fa-solid fa-chevron-down nav__icon"> </i>
+                            <i class="fa-solid fa-chevron-down menu-mobile__icon"> </i>
                         </a>
-                        
-                        <!--  -----  Submenu Item 5  ------->
-                        <ul class="nav__submenu">
-                            
+
+                        <!--  -----  Submenu item 5 ------->
+                        <ul class="menu-mobile__submenu-mobile">
+
                             <!--  1º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion17Url}" target="_blank" class="submenu__title"> 17 - Slider Plugin  </a>
                             </li>
 
                             <!--  2º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion18Url}" target="_blank" class="submenu__title"> 18 - Big Box Notification </a>
                             </li>
 
                             <!--  3º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion19Url}" target="_blank" class="submenu__title">  19 - Small Notification </a>
                             </li>
 
                             <!--  4º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion20Url}" target="_blank" class="submenu__title"> 20 - Tarea Notification </a>
                             </li>
-                           
+
                         </ul>
 
                     </li>
-
-
-                    <!--  -----  Item 6 - Peticiones Externas  -----  -->
-                    <li class="nav__item">
+                    
+                    <!--  -----  6º. Elemento li 'Peticiones Externas'  -----  -->
+                    <li class="menu-mobile__item">
                         
-                        <a href="#" class="nav__title">
-                            Peticiones Externas
-                            <i class="fa-solid fa-chevron-down nav__icon"> </i>
+                        <a href="#" class="menu-mobile__link">
+                            Peticionae Externas
+                            <i class="fa-solid fa-chevron-down menu-mobile__icon"> </i>
                         </a>
-                        
-                        <!--  -----  Submenu Item 6  ------->
-                        <ul class="nav__submenu">
-                            
+
+
+                        <!--  -----  Submenu item 5 ------->
+                        <ul class="menu-mobile__submenu-mobile">
+
                             <!--  1º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion21Url}" target="_blank" class="submenu__title"> 21 - Ajax 01 </a>
                             </li>
-                            
+
                             <!--  2º li del Submenu  -->
-                            <li class="submenu__item">
+                            <li class="submenu-mobile__item">
                                 <a href="${leccion22Url}" target="_blank" class="submenu__title"> 22 - Tarea Clima Ajax  </a>
                             </li>
-                            
-                        </ul>
 
+                        </ul>
+                    
                     </li>
 
 
-                    <!--  -----  Item 7 - Peticiones AJAX  -----  -->
-                    <li class="nav__item">
-                        <a href="https://www.oldschoolcode.antonydev.tech/jquery-ajax" target="_blank" class="nav__title"> Peticiones AJAX </a>
+                    <!--  -----  7º. Elemento li 'Peticiones AJAX'  -----  -->
+                    <li class="menu-mobile__item">
+                        
+                        <a href="https://www.oldschoolcode.antonydev.tech/jquery-ajax" target="_blank" class="menu-mobile__link"> Peticiones AJAX </a>    
+                                         
                     </li>
 
                 </ul>
 
             </nav>
 
-        </header>
+        </div>
+          
 
     `;
 
-    layoutMenu.append(headerHTML);
+    menuMobile.append(menuMobileHtml);
 
 }
